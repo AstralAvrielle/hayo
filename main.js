@@ -23,7 +23,21 @@ function applyCommon(){
  document.querySelectorAll('[data-phone]').forEach(el=>{const target=el.querySelector('span')||el;target.textContent=C.phone;const link=el.tagName==='A'?el:el.closest('a');if(link)link.href='tel:'+C.phone});
  document.querySelectorAll('[data-wechat]').forEach(el=>el.textContent=C.wechat);
  const contactHref=document.getElementById('contact')?'#contact':'index.html#contact';
- document.querySelectorAll('[data-whatsapp]').forEach(el=>{el.href=C.whatsapp&&!C.whatsapp.startsWith('YOUR_')?'https://wa.me/'+C.whatsapp+'?text='+encodeURIComponent(lang==='zh'?'您好，我想咨询定制包装。':'Hello, I would like to inquire about custom packaging.'):contactHref;});
+ const whatsappNumber = (C.whatsapp || '').replace(/\D/g, '');
+
+document.querySelectorAll('[data-whatsapp]').forEach(el => {
+  if (whatsappNumber) {
+    const message = lang === 'zh'
+      ? '您好，我想咨询定制包装。'
+      : 'Hello, I would like to inquire about custom packaging.';
+
+    el.href = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
+  } else {
+    el.href = contactHref;
+  }
+});
 }
 function switchLang(){lang=lang==='zh'?'en':'zh';localStorage.setItem('haoyang-lang',lang);applyCommon();document.dispatchEvent(new CustomEvent('haoyang-language',{detail:{lang}}));}
 
