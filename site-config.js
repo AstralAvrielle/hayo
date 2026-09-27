@@ -1,5 +1,5 @@
 window.HAOYANG_CONFIG = {
-  whatsapp: "YOUR_WHATSAPP_NUMBER", // Fill this only if you use WhatsApp
+  whatsapp: "+86 17815714151", // Fill this only if you use WhatsApp
   email: "sales@hayopack.com",
   phone: "+86 17815714151",
   wechat: "+86 17815714151",
