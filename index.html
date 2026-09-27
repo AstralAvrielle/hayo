@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
 
   <title
     data-zh="皓洋包装厂 | 定制礼盒与精品包装制造商"
@@ -59,74 +63,75 @@
   >
 
 
-  <!-- ========================= -->
-  <!-- 首页滚动条专用修复 -->
-  <!-- 只影响 index.html -->
-  <!-- ========================= -->
+  <!--
+    ========================================================
+    仅针对 INDEX 首页滚动条的修复
+    不需要修改 styles.css
+    ========================================================
+  -->
 
   <style>
 
-    .marquee {
-      width: 100% !important;
-      overflow: hidden !important;
-      white-space: nowrap !important;
-      position: relative !important;
+    #homeMarquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
     }
 
-    .marquee-track {
+    #homeMarqueeTrack {
       display: flex !important;
+      flex-direction: row !important;
       flex-wrap: nowrap !important;
+
       align-items: center !important;
 
       width: max-content !important;
       min-width: max-content !important;
 
-      animation:
-        index-marquee-scroll 55s linear infinite !important;
+      gap: 38px !important;
+      padding: 15px 0 !important;
+
+      /*
+       * 关闭 styles.css 原来的 marquee 动画，
+       * 首页单独使用下面的新动画。
+       */
+      animation: none !important;
 
       will-change: transform;
     }
 
-    .marquee-group {
-      display: flex;
-      flex-shrink: 0;
+    #homeMarqueeTrack > span {
+      display: inline-flex !important;
+
+      flex: 0 0 auto !important;
+
       align-items: center;
 
-      width: max-content;
-
-      gap: 65px;
-      padding-right: 65px;
+      white-space: nowrap !important;
     }
 
-    .marquee-group span {
-      flex: 0 0 auto;
-      display: inline-block;
-      white-space: nowrap;
+    #homeMarqueeTrack.home-marquee-running {
+      animation:
+        homeMarqueeScroll
+        var(--home-marquee-duration, 50s)
+        linear
+        infinite
+        !important;
     }
 
-    @keyframes index-marquee-scroll {
+    @keyframes homeMarqueeScroll {
 
       from {
         transform: translate3d(0, 0, 0);
       }
 
       to {
-        transform: translate3d(-50%, 0, 0);
-      }
-
-    }
-
-
-    /* 手机端稍微加快 */
-    @media (max-width: 768px) {
-
-      .marquee-track {
-        animation-duration: 38s !important;
-      }
-
-      .marquee-group {
-        gap: 38px;
-        padding-right: 38px;
+        transform:
+          translate3d(
+            var(--home-marquee-distance),
+            0,
+            0
+          );
       }
 
     }
@@ -153,9 +158,9 @@
 <body>
 
 
-  <!-- ========================= -->
+  <!-- ================================================== -->
   <!-- 导航 -->
-  <!-- ========================= -->
+  <!-- ================================================== -->
 
   <nav class="nav">
 
@@ -249,12 +254,13 @@
   </nav>
 
 
+
   <main>
 
 
-    <!-- ========================= -->
-    <!-- 首屏 -->
-    <!-- ========================= -->
+    <!-- ================================================== -->
+    <!-- 首页首屏 -->
+    <!-- ================================================== -->
 
     <section class="hero">
 
@@ -300,7 +306,6 @@
               获取定制报价
             </a>
 
-
             <a
               class="btn btn-ghost"
               href="#gallery"
@@ -344,6 +349,7 @@
           </div>
 
         </div>
+
 
 
         <div class="hero-visual reveal">
@@ -399,420 +405,73 @@
 
 
 
-    <!-- ================================================= -->
-    <!-- 超长无缝滚动条 -->
-    <!-- 第一组和第二组内容必须完全一致 -->
-    <!-- 每组内部重复 6 次，即使超宽屏也足够 -->
-    <!-- ================================================= -->
-
-    <div class="marquee">
-
-      <div class="marquee-track">
-
-
-        <!-- ================= -->
-        <!-- 第一大组 -->
-        <!-- ================= -->
-
-        <div class="marquee-group">
-
-
-          <!-- 第 1 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 2 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 3 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 4 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 5 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 6 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-        </div>
-
-
-
-        <!-- ================= -->
-        <!-- 第二大组 -->
-        <!-- 与第一大组完全一致 -->
-        <!-- ================= -->
-
-        <div class="marquee-group">
-
-
-          <!-- 第 1 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 2 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 3 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 4 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 5 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-
-          <!-- 第 6 轮 -->
-
-          <span data-zh="精品硬盒" data-en="RIGID BOXES">
-            精品硬盒
-          </span>
-
-          <span data-zh="香水包装" data-en="PERFUME PACKAGING">
-            香水包装
-          </span>
-
-          <span data-zh="烫金工艺" data-en="HOT FOIL">
-            烫金工艺
-          </span>
-
-          <span data-zh="压凸工艺" data-en="EMBOSSING">
-            压凸工艺
-          </span>
-
-          <span data-zh="局部UV" data-en="SPOT UV">
-            局部UV
-          </span>
-
-          <span data-zh="抽屉盒" data-en="DRAWER BOXES">
-            抽屉盒
-          </span>
-
-          <span data-zh="开窗盒" data-en="WINDOW BOXES">
-            开窗盒
-          </span>
-
-
-        </div>
-
+    <!-- ================================================== -->
+    <!-- 首页横向无限滚动条 -->
+    <!--
+      这里 HTML 只放一组。
+      后面的 JavaScript 会根据屏幕宽度自动复制。
+      不再手工复制几十组。
+    -->
+    <!-- ================================================== -->
+
+    <div
+      class="marquee"
+      id="homeMarquee"
+    >
+
+      <div
+        class="marquee-track"
+        id="homeMarqueeTrack"
+      >
+
+        <span
+          data-zh="精品硬盒"
+          data-en="RIGID BOXES"
+        >
+          精品硬盒
+        </span>
+
+        <span
+          data-zh="香水包装"
+          data-en="PERFUME PACKAGING"
+        >
+          香水包装
+        </span>
+
+        <span
+          data-zh="烫金工艺"
+          data-en="HOT FOIL"
+        >
+          烫金工艺
+        </span>
+
+        <span
+          data-zh="压凸工艺"
+          data-en="EMBOSSING"
+        >
+          压凸工艺
+        </span>
+
+        <span
+          data-zh="局部UV"
+          data-en="SPOT UV"
+        >
+          局部UV
+        </span>
+
+        <span
+          data-zh="抽屉盒"
+          data-en="DRAWER BOXES"
+        >
+          抽屉盒
+        </span>
+
+        <span
+          data-zh="开窗盒"
+          data-en="WINDOW BOXES"
+        >
+          开窗盒
+        </span>
 
       </div>
 
@@ -820,9 +479,9 @@
 
 
 
-    <!-- ========================= -->
+    <!-- ================================================== -->
     <!-- 服务能力 -->
-    <!-- ========================= -->
+    <!-- ================================================== -->
 
     <section>
 
@@ -838,6 +497,7 @@
             把包装做得更完整。
           </h2>
 
+
           <p
             data-zh="从产品尺寸、销售场景、预算与采购数量出发，匹配合适的盒型、材料和工艺，让包装既有呈现效果，也兼顾生产与运输。"
             data-en="Ideal for new product launches, seasonal gifting, brand upgrades, cross-border e-commerce and corporate gift packaging. We recommend suitable structures and finishes based on your product, budget and order quantity."
@@ -846,6 +506,7 @@
           </p>
 
         </div>
+
 
 
         <div class="services">
@@ -954,13 +615,14 @@
 
 
 
-    <!-- ========================= -->
+    <!-- ================================================== -->
     <!-- 包装案例 -->
-    <!-- ========================= -->
+    <!-- ================================================== -->
 
     <section id="gallery">
 
       <div class="container gallery-wrap reveal">
+
 
         <div class="section-head">
 
@@ -979,6 +641,7 @@
           </p>
 
         </div>
+
 
 
         <div class="gallery">
@@ -1076,9 +739,9 @@
 
 
 
-    <!-- ========================= -->
-    <!-- 页面入口 -->
-    <!-- ========================= -->
+    <!-- ================================================== -->
+    <!-- 三个内容入口 -->
+    <!-- ================================================== -->
 
     <section>
 
@@ -1180,9 +843,9 @@
 
 
 
-    <!-- ========================= -->
-    <!-- 询价 -->
-    <!-- ========================= -->
+    <!-- ================================================== -->
+    <!-- 快速询价 -->
+    <!-- ================================================== -->
 
     <section id="contact">
 
@@ -1378,7 +1041,6 @@
                 包装类型
               </span>
 
-
               <select name="category">
 
                 <option
@@ -1504,9 +1166,9 @@
 
 
 
-  <!-- ========================= -->
+  <!-- ================================================== -->
   <!-- 图片预览 -->
-  <!-- ========================= -->
+  <!-- ================================================== -->
 
   <div
     class="modal"
@@ -1528,9 +1190,9 @@
 
 
 
-  <!-- ========================= -->
+  <!-- ================================================== -->
   <!-- Footer -->
-  <!-- ========================= -->
+  <!-- ================================================== -->
 
   <footer>
 
@@ -1594,7 +1256,9 @@
 
 
 
+  <!-- ================================================== -->
   <!-- WhatsApp -->
+  <!-- ================================================== -->
 
   <a
     class="whatsapp"
@@ -1607,11 +1271,448 @@
 
 
 
-  <!-- 原来的配置文件保持不变 -->
+  <!-- ================================================== -->
+  <!-- 原来的 JS -->
+  <!-- ================================================== -->
 
   <script src="site-config.js"></script>
 
   <script src="main.js"></script>
+
+
+
+  <!--
+    ========================================================
+    首页滚动条自动扩充程序
+    仅存在于 index.html
+    不修改 main.js
+    ========================================================
+  -->
+
+  <script>
+
+    (function () {
+
+      const marquee =
+        document.getElementById("homeMarquee");
+
+      const track =
+        document.getElementById("homeMarqueeTrack");
+
+      if (!marquee || !track) {
+        return;
+      }
+
+
+      /*
+       * 保存最原始的七项。
+       * 后面无论屏幕多宽，
+       * 都从这七项自动生成。
+       */
+
+      const originalItems =
+        Array
+          .from(track.children)
+          .map(function (item) {
+
+            return item.cloneNode(true);
+
+          });
+
+
+
+      /*
+       * 获取当前语言。
+       */
+
+      function getCurrentLanguage() {
+
+        const lang =
+          (
+            document.documentElement.lang ||
+            "zh-CN"
+          ).toLowerCase();
+
+        if (lang.indexOf("en") === 0) {
+          return "en";
+        }
+
+        return "zh";
+
+      }
+
+
+
+      /*
+       * 根据当前语言设置文字。
+       *
+       * 这样中文、英文切换以后，
+       * 滚动条都会重新计算真实宽度。
+       */
+
+      function applyLanguage(item) {
+
+        const lang =
+          getCurrentLanguage();
+
+        const text =
+          lang === "en"
+            ? item.getAttribute("data-en")
+            : item.getAttribute("data-zh");
+
+        if (text) {
+          item.textContent = text;
+        }
+
+      }
+
+
+
+      /*
+       * 添加一整轮：
+       *
+       * 精品硬盒
+       * 香水包装
+       * 烫金工艺
+       * 压凸工艺
+       * 局部UV
+       * 抽屉盒
+       * 开窗盒
+       */
+
+      function addOneRound() {
+
+        originalItems.forEach(
+          function (template) {
+
+            const item =
+              template.cloneNode(true);
+
+            applyLanguage(item);
+
+            track.appendChild(item);
+
+          }
+        );
+
+      }
+
+
+
+      /*
+       * 重新创建整个滚动条。
+       */
+
+      function buildMarquee() {
+
+        /*
+         * 先停止动画。
+         */
+
+        track.classList.remove(
+          "home-marquee-running"
+        );
+
+
+        /*
+         * 清空之前自动生成的文字。
+         */
+
+        track.innerHTML = "";
+
+
+        /*
+         * 至少先放一轮。
+         */
+
+        addOneRound();
+
+
+        /*
+         * 第一半滚动内容必须非常长。
+         *
+         * 这里不再固定复制 3 次、6 次。
+         *
+         * 浏览器越宽，
+         * 自动生成得越长。
+         *
+         * 最少保证约 3600px。
+         *
+         * 如果是 2K / 4K 屏幕，
+         * 会继续自动增加。
+         */
+
+        const targetWidth =
+          Math.max(
+            window.innerWidth * 2.5,
+            3600
+          );
+
+
+        /*
+         * 自动补长。
+         */
+
+        let safety = 0;
+
+        while (
+          track.scrollWidth < targetWidth &&
+          safety < 50
+        ) {
+
+          addOneRound();
+
+          safety++;
+
+        }
+
+
+
+        /*
+         * 记录现在有多少项目。
+         *
+         * 当前所有内容就是第一半。
+         */
+
+        const firstHalfItems =
+          Array.from(track.children);
+
+
+        /*
+         * 完整复制第一半。
+         *
+         * 第一半 + 第二半
+         *
+         * 两半完全一样，
+         * 才能做到无缝循环。
+         */
+
+        firstHalfItems.forEach(
+          function (item) {
+
+            const copy =
+              item.cloneNode(true);
+
+            track.appendChild(copy);
+
+          }
+        );
+
+
+
+        /*
+         * 第二半第一个项目的位置，
+         * 就是真正应该滚动的距离。
+         *
+         * 不再使用不精确的 -50%。
+         */
+
+        const halfCount =
+          firstHalfItems.length;
+
+        const secondHalfFirstItem =
+          track.children[halfCount];
+
+        if (!secondHalfFirstItem) {
+          return;
+        }
+
+
+        const distance =
+          secondHalfFirstItem.offsetLeft -
+          track.children[0].offsetLeft;
+
+
+
+        /*
+         * 把真实距离告诉 CSS。
+         */
+
+        track.style.setProperty(
+          "--home-marquee-distance",
+          "-" + distance + "px"
+        );
+
+
+
+        /*
+         * 控制滚动速度。
+         *
+         * 60 = 每秒约移动 60px。
+         *
+         * 数字越大越快：
+         *
+         * 50 = 慢
+         * 60 = 推荐
+         * 75 = 稍快
+         * 90 = 快
+         */
+
+        const pixelsPerSecond = 60;
+
+
+        const duration =
+          Math.max(
+            distance / pixelsPerSecond,
+            25
+          );
+
+
+        track.style.setProperty(
+          "--home-marquee-duration",
+          duration + "s"
+        );
+
+
+
+        /*
+         * 强制浏览器刷新一次，
+         * 再重新启动动画。
+         */
+
+        void track.offsetWidth;
+
+
+        track.classList.add(
+          "home-marquee-running"
+        );
+
+      }
+
+
+
+      /*
+       * 页面载入以后启动。
+       */
+
+      function startMarquee() {
+
+        buildMarquee();
+
+      }
+
+
+      if (
+        document.readyState === "loading"
+      ) {
+
+        document.addEventListener(
+          "DOMContentLoaded",
+          startMarquee
+        );
+
+      } else {
+
+        startMarquee();
+
+      }
+
+
+
+      /*
+       * 浏览器窗口大小发生变化：
+       *
+       * 最大化
+       * 缩小
+       * 放大
+       * 调整窗口
+       *
+       * 都重新计算长度。
+       */
+
+      let resizeTimer = null;
+
+
+      window.addEventListener(
+        "resize",
+        function () {
+
+          clearTimeout(
+            resizeTimer
+          );
+
+
+          resizeTimer =
+            setTimeout(
+              function () {
+
+                buildMarquee();
+
+              },
+              180
+            );
+
+        }
+      );
+
+
+
+      /*
+       * 监听中英文切换。
+       *
+       * 当 main.js 把：
+       *
+       * zh-CN
+       *
+       * 改为：
+       *
+       * en
+       *
+       * 会自动重新计算英文文字长度。
+       */
+
+      const languageObserver =
+        new MutationObserver(
+          function (mutations) {
+
+            let languageChanged = false;
+
+
+            mutations.forEach(
+              function (mutation) {
+
+                if (
+                  mutation.type === "attributes" &&
+                  mutation.attributeName === "lang"
+                ) {
+
+                  languageChanged = true;
+
+                }
+
+              }
+            );
+
+
+            if (languageChanged) {
+
+              setTimeout(
+                function () {
+
+                  buildMarquee();
+
+                },
+                50
+              );
+
+            }
+
+          }
+        );
+
+
+      languageObserver.observe(
+        document.documentElement,
+        {
+          attributes: true,
+          attributeFilter: ["lang"]
+        }
+      );
+
+
+    })();
+
+  </script>
 
 
 </body>
