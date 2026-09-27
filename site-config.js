@@ -9,5 +9,5 @@ window.HAOYANG_CONFIG = {
 
   // Google Apps Script Web App URL.
   // After deploying google-apps-script.gs, paste the /exec URL here.
-  inquiryEndpoint: "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
+  inquiryEndpoint: "https://script.google.com/macros/s/AKfycbzni4a33l_0h7bQ3exbbHWQTjWB5cHMzjhd9sNQOx7-NOXvPWGl0yRrxeCYTYF4OEfO6g/exec"
 };
