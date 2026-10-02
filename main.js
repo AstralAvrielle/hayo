@@ -1,7 +1,7 @@
 const C=window.HAOYANG_CONFIG||{};
 const common={
  zh:{brand:'皓洋包装厂',home:'首页',about:'关于我们',factory:'工厂实力',custom:'定制包装',cases:'包装案例',contact:'联系询价',cta:'获取报价',footer:'精品礼盒与定制包装',wa:'WhatsApp 咨询'},
- en:{brand:'Haoyang Packaging',home:'Home',about:'About Us',factory:'Factory',custom:'Custom Packaging',cases:'Portfolio',contact:'Contact',cta:'Get a Quote',footer:'Premium Gift Boxes & Custom Packaging',wa:'WhatsApp'}
+ en:{brand:'HAYO PACKAGING',home:'Home',about:'About Us',factory:'Factory',custom:'Custom Packaging',cases:'Portfolio',contact:'Contact',cta:'Get a Quote',footer:'Premium Gift Boxes & Custom Packaging',wa:'WhatsApp'}
 };
 let lang=localStorage.getItem('haoyang-lang')||'zh';
 
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
    const data=new FormData(form);
    data.append('language',lang==='zh'?'中文':'English');
-   data.append('source','Haoyang Packaging Website');
+   data.append('source','HAYO PACKAGING Website');
    data.append('pageUrl',location.href);
 
    try{
